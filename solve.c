@@ -6,7 +6,7 @@
 /*   By: adenece <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/18 12:14:01 by adenece           #+#    #+#             */
-/*   Updated: 2016/03/31 17:10:09 by adenece          ###   ########.fr       */
+/*   Updated: 2016/03/31 17:36:01 by dalexand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,11 +64,11 @@ int			solve(t_tetriminos_array *ta, unsigned char i, char **map, int edge)
 
 	if (i == ta->size)
 		return (1);
-	pos.x = 0;
-	while (pos.x < edge)
+	pos.y = 0;
+	while (pos.y < edge)
 	{
-		pos.y = 0;
-		while (pos.y < edge)
+		pos.x = 0;
+		while (pos.x < edge)
 		{
 			if (can_u_put_it(ta->array[i], map, &pos, edge))
 			{
@@ -76,11 +76,10 @@ int			solve(t_tetriminos_array *ta, unsigned char i, char **map, int edge)
 				if (solve(ta, i + 1, map, edge))
 					return (1);
 				reset_it(ta->array[i], map, &pos);
-			/*	print_map(map, edge);*/
 			}
-			pos.y++;
+			pos.x++;
 		}
-		pos.x++;
+		pos.y++;
 	}
 	return (0);
 }
