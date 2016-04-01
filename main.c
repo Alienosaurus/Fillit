@@ -6,7 +6,7 @@
 /*   By: adenece <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/03 14:48:34 by adenece           #+#    #+#             */
-/*   Updated: 2016/03/31 17:06:53 by adenece          ###   ########.fr       */
+/*   Updated: 2016/04/01 11:35:45 by dalexand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int			loop(int fd)
 	char				**map;
 
 	ta = ft_read_all(fd);
-	edge = 2;
+	edge = ft_square_root(ta->size);
 	while (1)
 	{
 		map = ft_map(edge);
