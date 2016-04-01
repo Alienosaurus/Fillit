@@ -6,7 +6,7 @@
 /*   By: dalexand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/07 10:38:02 by dalexand          #+#    #+#             */
-/*   Updated: 2016/03/31 22:19:44 by dalexand         ###   ########.fr       */
+/*   Updated: 2016/04/01 12:14:22 by adenece          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,8 @@ void				crop(t_tetriminos *t);
 t_tetriminos		*check_touch_blocks(t_tetriminos *t);
 t_tetriminos		*parse(char *str, int nbtetri);
 void				ft_error(void);
-int					ft_read(int fd, t_tetriminos **result, int nbtetri, int *nb_read);
+int					ft_read(int fd, t_tetriminos **result, int nbtetri,
+		int *nb_read);
 t_tetriminos_array	*ft_read_all(int fd);
 int					solve(t_tetriminos_array *ta, unsigned char i,
 				char **map, int nax_edge);
